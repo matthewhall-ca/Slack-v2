@@ -135,4 +135,16 @@ class Provider extends AbstractProvider
             'organization_id' => Arr::get($user, 'team.id'),
         ]);
     }
+    
+    /**
+     * Get the access token from the token response body.
+     *
+     * @param array $body
+     *
+     * @return string
+     */
+    protected function parseAccessToken($body)
+    {
+        return Arr::get($body, 'authed_user.access_token');
+    }
 }
