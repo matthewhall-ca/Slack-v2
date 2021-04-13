@@ -15,7 +15,7 @@ class Provider extends AbstractProvider
     /**
      * Unique Provider Identifier.
      */
-    public const IDENTIFIER = 'SLACK_V2';
+    public const IDENTIFIER = 'SLACK';
 
     /**
      * {@inheritdoc}
@@ -28,7 +28,7 @@ class Provider extends AbstractProvider
 
         // Provide some default scopes if the user didn't define some.
         // See: https://github.com/SocialiteProviders/Providers/pull/53
-        return ['identity.basic', 'identity.email', 'identity.team'];
+        return ['team:read'];
     }
 
     /**
