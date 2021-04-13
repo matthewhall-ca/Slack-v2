@@ -22,13 +22,8 @@ class Provider extends AbstractProvider
      */
     public function getScopes()
     {
-        if (count($this->scopes) > 0) {
-            return $this->scopes;
-        }
-
-        // Provide some default scopes if the user didn't define some.
-        // See: https://github.com/SocialiteProviders/Providers/pull/53
-        return ['team:read'];
+        // No scopes is valid with Slack
+        return [];
     }
 
     /**
