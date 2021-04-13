@@ -15,7 +15,7 @@ class Provider extends AbstractProvider
     /**
      * Unique Provider Identifier.
      */
-    public const IDENTIFIER = 'SLACK';
+    public const IDENTIFIER = 'SLACK_V2';
 
     /**
      * {@inheritdoc}
@@ -28,7 +28,7 @@ class Provider extends AbstractProvider
 
         // Provide some default scopes if the user didn't define some.
         // See: https://github.com/SocialiteProviders/Providers/pull/53
-        return ['identity.basic', 'identity.email', 'identity.team', 'identity.avatar'];
+        return ['identity.basic', 'identity.email', 'identity.team'];
     }
 
     /**
@@ -92,7 +92,7 @@ class Provider extends AbstractProvider
      */
     protected function getTokenUrl()
     {
-        return 'https://slack.com/api/oauth.access';
+        return 'https://slack.com/api/oauth.v2.access';
     }
 
     /**
